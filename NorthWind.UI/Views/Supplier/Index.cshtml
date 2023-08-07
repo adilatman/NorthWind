@@ -19,7 +19,7 @@
         @foreach (var item in Model.OrderBy(c => c.CompanyName))
         {
             <tr>
-                <td>@item.CompanyName <a asp-action="EditSupplier" asp-controller="Supplier" asp-route-id="@item.SupplierID">Edit</a></td>
+                <td>@item.CompanyName <br /><a asp-action="EditSupplier" asp-controller="Supplier" asp-route-id="@item.SupplierID">Edit</a> | <a asp-action="DeleteSupplier" asp-controller="Supplier" asp-route-id="@item.SupplierID">Delete</a></td>
                 <td>@item.ContactName</td>
                 <td>@item.ContactTitle</td>
                 <td>@item.Address</td>
