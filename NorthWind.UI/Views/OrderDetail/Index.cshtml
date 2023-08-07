@@ -17,7 +17,7 @@
         @foreach (var item in Model.OrderBy(c => c.OrderID))
         {
         <tr>
-            <td>@item.OrderID <a asp-action="EditOrderDetail" asp-controller="OrderDetail" asp-route-id="@item.OrderID">Edit</a></td>
+            <td>@item.OrderID <br /><a asp-action="EditOrderDetail" asp-controller="OrderDetail" asp-route-id="@item.OrderID">Edit</a> | <a asp-action="DeleteOrderDetail" asp-controller="OrderDetail" asp-route-id="@item.OrderID">Delete</a></td>
             <td>@item.Product</td>
             <td>@item.UnitPrice</td>
             <td>@item.Quantity</td>

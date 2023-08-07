@@ -14,7 +14,7 @@
         @foreach (var item in Model.OrderBy(c => c.CategoryName))
         {
             <tr>
-                <td>@item.CategoryName <a asp-action="EditCategory" asp-controller="Category" asp-route-id="@item.CategoryID">Edit</a></td>
+                <td>@item.CategoryName <br /><a asp-action="EditCategory" asp-controller="Category" asp-route-id="@item.CategoryID">Edit</a> | <a asp-action="DeleteCategory" asp-controller="Category" asp-route-id="@item.CategoryID">Delete</a></td>
                 <td>@item.Description</td>                
             </tr>
         }
