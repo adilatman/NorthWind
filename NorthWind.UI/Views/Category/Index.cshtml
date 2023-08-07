@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Category>
+<h1>Categories</h1>
+<br />
+<a asp-action="NewCategory" asp-controller="Category" class="btn btn-danger">Add Category</a>
+<br />
+<table class="table table-hover mt-3">
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderBy(c => c.CategoryName))
+        {
+            <tr>
+                <td>@item.CategoryName <a asp-action="EditCategory" asp-controller="Category" asp-route-id="@item.CategoryID">Edit</a></td>
+                <td>@item.Description</td>                
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+﻿@model AddProductVM
+
+<h2>Add New Product</h2>
+<br />
+<form asp-controller="Product" asp-action="NewProduct" method="post">
+    <label>Category: </label> <select asp-for="CategoryID" asp-items="@(new SelectList(Model.categoryVMs,"CategoryID","CategoryName"))">
+        <option>Seciniz</option>
+    </select>
+    <br />
+    <label>Supplier: </label> <select asp-for="SupplierID" asp-items="@(new SelectList(Model.supplierVMs,"SupplierID","CompanyName"))">
+        <option>Seciniz</option>
+    </select>
+    <br />
+    <label>Product Name: </label> <input type="text" asp-for="ProductName" />
+    <br />
+    <label>Quantity Per Unit: </label> <input type="text" asp-for="QuantityPerUnit" />
+    <br />
+    <label>Unit Price: </label> <input type="text" asp-for="UnitPrice" />
+    <br />
+    <label>Units In Stock: </label> <input type="text" asp-for="UnitsInStock" />
+    <br />
+    <label>Units On Order: </label> <input type="text" asp-for="UnitsOnOrder" />
+    <br />
+    <label>Reorder Level: </label> <input type="text" asp-for="ReorderLevel" />
+    <br />
+    <label>Discontinued: </label> <input type="checkbox" asp-for="Discontinued" />
+    <br />
+    <input type="submit" name="name" value="Add" class="btn btn-danger" />
+</form>

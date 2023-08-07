@@ -1,0 +1,11 @@
+﻿@model ShipperVM
+
+<h2>Add New Shipper</h2>
+<br />
+<form asp-controller="Shipper" asp-action="NewShipper" method="post">
+    <label>Company Name: </label> <input type="text" asp-for="CompanyName" />
+    <br />
+    <label>Phone: </label> <input type="text" asp-for="Phone" />
+    <br />
+    <input type="submit" name="name" value="Add" class="btn btn-danger" />
+</form>

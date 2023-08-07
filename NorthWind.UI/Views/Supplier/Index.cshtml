@@ -1,0 +1,32 @@
+﻿@model IEnumerable<GetSupplierVM>
+<h1>Suppliers</h1>
+<br />
+<a asp-action="NewSupplier" asp-controller="Supplier" class="btn btn-danger">Add Supplier</a>
+<br />
+<table class="table table-hover mt-3">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Contact Name</th>
+            <th>ContactTitle</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Fax</th>
+            <th>Home Page</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderBy(c => c.CompanyName))
+        {
+            <tr>
+                <td>@item.CompanyName <a asp-action="EditSupplier" asp-controller="Supplier" asp-route-id="@item.SupplierID">Edit</a></td>
+                <td>@item.ContactName</td>
+                <td>@item.ContactTitle</td>
+                <td>@item.Address</td>
+                <td>@item.Phone</td>
+                <td>@item.Fax</td>
+                <td>@item.HomePage</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Shipper>
+<h1>Shippers</h1>
+<br />
+<a asp-action="NewShipper" asp-controller="Shipper" class="btn btn-danger">Add Shipper</a>
+<br />
+<table class="table table-hover mt-3">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Where(s=>s.AktifMi==true).OrderBy(c => c.CompanyName))
+        {
+            <tr>
+                <td>@item.CompanyName <a asp-action="EditShipper" asp-controller="Shipper" asp-route-id="@item.ShipperID">Edit</a></td>
+                <td>@item.Phone</td>
+            </tr>
+        }
+    </tbody>
+</table>

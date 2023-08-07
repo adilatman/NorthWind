@@ -1,0 +1,29 @@
+﻿@model CustomerVM
+
+<h2>Add New Customer</h2>
+<br />
+<form asp-controller="Customer" asp-action="NewCustomer" method="post">
+    <label>CustomerID: </label> <input type="text" placeholder="5-letters" asp-for="CustomerID" />
+    <br />
+    <label>Customer Name: </label> <input type="text" asp-for="CompanyName" />
+    <br />
+    <label>Contact Name: </label> <input type="text" asp-for="ContactName" />
+    <br />
+    <label>Contact Title: </label> <input type="text" asp-for="ContactTitle" />
+    <br />
+    <label>Address: </label> <input type="text" asp-for="Address" />
+    <br />
+    <label>City: </label> <input type="text" asp-for="City" />
+    <br />
+    <label>Region: </label> <input type="text" asp-for="Region" />
+    <br />
+    <label>Postal Code: </label> <input type="text" asp-for="PostalCode" />
+    <br />
+    <label>Country: </label> <input type="text" asp-for="Country" />
+    <br />
+    <label>Phone: </label> <input type="text" asp-for="Phone" />
+    <br />
+    <label>Fax: </label> <input type="text" asp-for="Fax" />
+    <br />
+    <input type="submit" name="name" value="Add" class="btn btn-danger" />
+</form>

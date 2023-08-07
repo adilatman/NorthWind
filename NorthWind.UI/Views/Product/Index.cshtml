@@ -1,0 +1,36 @@
+﻿@model IEnumerable<GetProductVM>
+<h1>Products</h1>
+<br />
+<a asp-action="NewProduct" asp-controller="Product" class="btn btn-danger">Add Product</a>
+<br />
+<table class="table table-hover mt-3">
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Supplier</th>
+            <th>Quantity Per Unit</th>
+            <th>Unit Price</th>
+            <th>Units In Stock</th>
+            <th>Units In Order</th>
+            <th>Reorder Level</th>
+            <th>Discontinued</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderBy(c => c.ProductName))
+        {
+            <tr>
+                <td>@item.ProductName <a asp-action="EditProduct" asp-controller="Product" asp-route-id="@item.ProductID">Edit</a></td>
+                <td>@item.Category</td>
+                <td>@item.Supplier</td>
+                <td>@item.QuantityPerUnit</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.UnitsInStock</td>
+                <td>@item.UnitsInOrder</td>
+                <td>@item.ReorderLevel</td>
+                <td>@item.Discontinued</td>
+            </tr>
+        }
+    </tbody>
+</table>

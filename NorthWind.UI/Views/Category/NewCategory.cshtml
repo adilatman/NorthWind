@@ -1,0 +1,11 @@
+﻿@model CategoryVM
+
+<h2>Add New Category</h2>
+<br />
+<form asp-controller="Category" asp-action="NewCategory" method="post">
+    <label>Category Name: </label> <input type="text" asp-for="CategoryName" />
+                                   <br />
+    <label>Description: </label> <input type="text" asp-for="Description" />
+                                 <br />
+    <input type="submit" name="name" value="Add" class="btn btn-danger" />
+</form>

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<GetOrderDetailVM>
+<h1>Order Details</h1>
+<br />
+<a asp-action="NewOrderDetail" asp-controller="OrderDetail" class="btn btn-danger">Add Order Detail</a>
+<br />
+<table class="table table-hover mt-3">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Product</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Discount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.OrderBy(c => c.OrderID))
+        {
+        <tr>
+            <td>@item.OrderID <a asp-action="EditOrderDetail" asp-controller="OrderDetail" asp-route-id="@item.OrderID">Edit</a></td>
+            <td>@item.Product</td>
+            <td>@item.UnitPrice</td>
+            <td>@item.Quantity</td>
+            <td>@item.Discount</td>
+        </tr>
+        }
+    </tbody>
+</table>

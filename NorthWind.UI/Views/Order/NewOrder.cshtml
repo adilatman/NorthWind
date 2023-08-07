@@ -1,0 +1,39 @@
+﻿@model AddOrderVM
+
+<h2>Add New Order</h2>
+<br />
+<form asp-controller="Order" asp-action="NewOrder" method="post">
+    <label>Customer: </label> <select asp-for="CustomerID" asp-items="@(new SelectList(Model.customerVMs,"CustomerID","CompanyName"))">
+        <option>Seciniz</option>
+    </select>
+    <br />
+    <label>Employee: </label> <select asp-for="EmployeeID" asp-items="@(new SelectList(Model.employeeVMs,"EmployeeID","LastName"))">
+        <option>Seciniz</option>
+    </select>
+    <br />
+    <label>Shipper: </label> <select asp-for="ShipVia" asp-items="@(new SelectList(Model.shipperVMs,"ShipperID","CompanyName"))">
+        <option>Seciniz</option>
+    </select>
+    <br />
+    <label>Order Date: </label> <input type="date" asp-for="OrderDate" />
+    <br />
+    <label>Required Date: </label> <input type="date" asp-for="RequiredDate" />
+    <br />
+    <label>Shipped Date: </label> <input type="date" asp-for="ShippedDate" />
+    <br />
+    <label>Freight: </label> <input type="text" asp-for="Freight" />
+    <br />    
+    <label>Ship Name: </label> <input type="text" asp-for="ShipName" />
+    <br />
+    <label>Ship Address: </label> <input type="text" asp-for="ShipAddress" />
+    <br />
+    <label>Ship City: </label> <input type="text" asp-for="ShipCity" />
+    <br />
+    <label>Ship Region: </label> <input type="text" asp-for="ShipRegion" />
+    <br />
+    <label>Ship Postal Code: </label> <input type="text" asp-for="ShipPostalCode" />
+    <br />
+    <label>Ship Country: </label> <input type="text" asp-for="ShipCountry" />
+    <br />
+    <input type="submit" name="name" value="Add" class="btn btn-danger" />
+</form>
