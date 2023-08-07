@@ -3,9 +3,7 @@
 <h2>Add New Category</h2>
 <br />
 <form asp-controller="Category" asp-action="NewCategory" method="post">
-    <label>Category Name: </label> <input type="text" asp-for="CategoryName" />
-                                   <br />
-    <label>Description: </label> <input type="text" asp-for="Description" />
-                                 <br />
-    <input type="submit" name="name" value="Add" class="btn btn-danger" />
+    <div class="mb-3"><label class="form-label">Category Name: </label> <input class="form-control"  type="text" asp-for="CategoryName" /></div>
+    <div class="mb-3"><label class="form-label">Description: </label> <input class="form-control"  type="text" asp-for="Description" /></div>
+    <div class="mb-3"><input type="submit" name="name" value="Add" class="btn btn-danger" /></div>    
 </form>

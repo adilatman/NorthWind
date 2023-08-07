@@ -3,9 +3,7 @@
 <h2>Add New Shipper</h2>
 <br />
 <form asp-controller="Shipper" asp-action="NewShipper" method="post">
-    <label>Company Name: </label> <input type="text" asp-for="CompanyName" />
-    <br />
-    <label>Phone: </label> <input type="text" asp-for="Phone" />
-    <br />
-    <input type="submit" name="name" value="Add" class="btn btn-danger" />
+    <div class="mb-3"><label class="form-label">Company Name: </label> <input class="form-control"  type="text" asp-for="CompanyName" /></div>
+    <div class="mb-3"><label class="form-label">Phone: </label> <input class="form-control"  type="text" asp-for="Phone" /></div>
+    <div class="mb-3"><input type="submit" name="name" value="Add" class="btn btn-danger" /></div>
 </form>

@@ -3,27 +3,16 @@
 <h2>Add New Customer</h2>
 <br />
 <form asp-controller="Customer" asp-action="NewCustomer" method="post">
-    <label>CustomerID: </label> <input type="text" placeholder="5-letters" asp-for="CustomerID" />
-    <br />
-    <label>Customer Name: </label> <input type="text" asp-for="CompanyName" />
-    <br />
-    <label>Contact Name: </label> <input type="text" asp-for="ContactName" />
-    <br />
-    <label>Contact Title: </label> <input type="text" asp-for="ContactTitle" />
-    <br />
-    <label>Address: </label> <input type="text" asp-for="Address" />
-    <br />
-    <label>City: </label> <input type="text" asp-for="City" />
-    <br />
-    <label>Region: </label> <input type="text" asp-for="Region" />
-    <br />
-    <label>Postal Code: </label> <input type="text" asp-for="PostalCode" />
-    <br />
-    <label>Country: </label> <input type="text" asp-for="Country" />
-    <br />
-    <label>Phone: </label> <input type="text" asp-for="Phone" />
-    <br />
-    <label>Fax: </label> <input type="text" asp-for="Fax" />
-    <br />
-    <input type="submit" name="name" value="Add" class="btn btn-danger" />
+    <div class="mb-3"><label class="form-label">CustomerID: </label> <input class="form-control"  type="text" placeholder="5-letters" asp-for="CustomerID" /></div>
+    <div class="mb-3"><label class="form-label">Customer Name: </label> <input class="form-control"  type="text" asp-for="CompanyName" /></div>
+    <div class="mb-3"><label class="form-label">Contact Name: </label> <input class="form-control"  type="text" asp-for="ContactName" /></div>
+    <div class="mb-3"><label class="form-label">Contact Title: </label> <input class="form-control"  type="text" asp-for="ContactTitle" /></div>
+    <div class="mb-3"><label class="form-label">Address: </label> <input class="form-control"  type="text" asp-for="Address" /></div>
+    <div class="mb-3"><label class="form-label">City: </label> <input class="form-control"  type="text" asp-for="City" /></div>
+    <div class="mb-3"><label class="form-label">Region: </label> <input class="form-control"  type="text" asp-for="Region" /></div>
+    <div class="mb-3"><label class="form-label">Postal Code: </label> <input class="form-control"  type="text" asp-for="PostalCode" /></div>
+    <div class="mb-3"><label class="form-label">Country: </label> <input class="form-control"  type="text" asp-for="Country" /></div>
+    <div class="mb-3"><label class="form-label">Phone: </label> <input class="form-control"  type="text" asp-for="Phone" /></div>
+    <div class="mb-3"><label class="form-label">Fax: </label> <input class="form-control"  type="text" asp-for="Fax" /></div>
+    <div class="mb-3"><input type="submit" name="name" value="Add" class="btn btn-danger" /></div>    
 </form>
