@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Shipper>
+﻿@model IEnumerable<ShipperVM>
 <h1>Shippers</h1>
 <br />
 <a asp-action="NewShipper" asp-controller="Shipper" class="btn btn-danger">Add Shipper</a>
@@ -11,7 +11,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Where(s=>s.AktifMi==true).OrderBy(c => c.CompanyName))
+        @foreach (var item in Model.OrderBy(c => c.CompanyName))
         {
             <tr>
                 <td>@item.CompanyName <a asp-action="EditShipper" asp-controller="Shipper" asp-route-id="@item.ShipperID">Edit</a></td>
