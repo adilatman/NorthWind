@@ -3,27 +3,22 @@
 <h2>Add New Product</h2>
 <br />
 <form asp-controller="Product" asp-action="NewProduct" method="post">
-    <label>Category: </label> <select asp-for="CategoryID" asp-items="@(new SelectList(Model.categoryVMs,"CategoryID","CategoryName"))">
-        <option>Seciniz</option>
-    </select>
-    <br />
-    <label>Supplier: </label> <select asp-for="SupplierID" asp-items="@(new SelectList(Model.supplierVMs,"SupplierID","CompanyName"))">
-        <option>Seciniz</option>
-    </select>
-    <br />
-    <label>Product Name: </label> <input type="text" asp-for="ProductName" />
-    <br />
-    <label>Quantity Per Unit: </label> <input type="text" asp-for="QuantityPerUnit" />
-    <br />
-    <label>Unit Price: </label> <input type="text" asp-for="UnitPrice" />
-    <br />
-    <label>Units In Stock: </label> <input type="text" asp-for="UnitsInStock" />
-    <br />
-    <label>Units On Order: </label> <input type="text" asp-for="UnitsOnOrder" />
-    <br />
-    <label>Reorder Level: </label> <input type="text" asp-for="ReorderLevel" />
-    <br />
-    <label>Discontinued: </label> <input type="checkbox" asp-for="Discontinued" />
-    <br />
-    <input type="submit" name="name" value="Add" class="btn btn-danger" />
+    <div class="mb-3">
+        <label>Category: </label> <select asp-for="CategoryID" asp-items="@(new SelectList(Model.categoryVMs,"CategoryID","CategoryName"))">
+            <option>Seciniz</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Supplier: </label> <select asp-for="SupplierID" asp-items="@(new SelectList(Model.supplierVMs,"SupplierID","CompanyName"))">
+            <option>Seciniz</option>
+        </select>
+    </div>
+    <div class="mb-3"><label class="form-label">Product Name: </label> <input class="form-control"  type="text" asp-for="ProductName" /></div>
+    <div class="mb-3"><label class="form-label">Quantity Per Unit: </label> <input class="form-control"  type="text" asp-for="QuantityPerUnit" /></div>
+    <div class="mb-3"><label class="form-label">Unit Price: </label> <input class="form-control"  type="text" asp-for="UnitPrice" /></div>
+    <div class="mb-3"><label class="form-label">Units In Stock: </label> <input class="form-control"  type="text" asp-for="UnitsInStock" /></div>
+    <div class="mb-3"><label class="form-label">Units On Order: </label> <input class="form-control"  type="text" asp-for="UnitsOnOrder" /></div>
+    <div class="mb-3"><label class="form-label">Reorder Level: </label> <input class="form-control"  type="text" asp-for="ReorderLevel" /></div>
+    <div class="mb-3"><label class="form-label">Discontinued: </label> <input type="checkbox" asp-for="Discontinued" /></div>
+    <div class="mb-3"><input type="submit" name="name" value="Add" class="btn btn-danger" /></div>
 </form>

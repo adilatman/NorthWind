@@ -3,19 +3,18 @@
 <h2>Add New Order Detail</h2>
 <br />
 <form asp-controller="OrderDetail" asp-action="NewOrderDetail" method="post">
-    <label>Order: </label> <select asp-for="OrderID" asp-items="@(new SelectList(Model.orderVMs,"OrderID","OrderID"))">
-        <option>Seciniz</option>
-    </select>
-    <br />
-    <label>Product: </label> <select asp-for="ProductID" asp-items="@(new SelectList(Model.productVMs,"ProductID","ProductName"))">
-        <option>Seciniz</option>
-    </select>
-    <br />
-    <label>Unit Price: </label> <input type="text" asp-for="UnitPrice" />
-    <br />
-    <label>Quantity: </label> <input type="text" asp-for="Quantity" />
-    <br />
-    <label>Discount: </label> <input type="text" asp-for="Discount" />
-    <br />
-    <input type="submit" name="name" value="Add" class="btn btn-danger" />
+    <div class="mb-3">
+        <label>Order: </label> <select asp-for="OrderID" asp-items="@(new SelectList(Model.orderVMs,"OrderID","OrderID"))">
+            <option>Seciniz</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Product: </label> <select asp-for="ProductID" asp-items="@(new SelectList(Model.productVMs,"ProductID","ProductName"))">
+            <option>Seciniz</option>
+        </select>
+    </div>
+    <div class="mb-3"><label class="form-label">Unit Price: </label> <input class="form-control"  type="text" asp-for="UnitPrice" /></div>
+    <div class="mb-3"><label class="form-label">Quantity: </label> <input class="form-control"  type="text" asp-for="Quantity" /></div>
+    <div class="mb-3"><label class="form-label">Discount: </label> <input class="form-control"  type="text" asp-for="Discount" /></div>
+    <div class="mb-3"><input type="submit" name="name" value="Add" class="btn btn-danger" /></div>
 </form>
