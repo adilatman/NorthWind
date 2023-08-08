@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NorthWind.COMMON.ViewModels
+namespace NorthWind.COMMON.ViewModels.GetVM
 {
     public class GetProductVM
     {

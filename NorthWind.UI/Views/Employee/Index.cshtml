@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<GetEmployeeVM>
 <h1>Employees</h1>
+@if (TempData["SuccessMessageEmployeeAdd"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessageEmployeeAdd"]</div>
+}
 <br />
 <a asp-action="NewEmployee" asp-controller="Employee" class="btn btn-danger">Add Employee</a>
 <br />
@@ -20,18 +24,18 @@
     <tbody>
         @foreach (var item in Model.OrderBy(c => c.Name))
         {
-        <tr>
-            <td>@item.Name <br /><a asp-action="EditEmployee" asp-controller="Employee" asp-route-id="@item.EmployeeID">Edit</a> | <a asp-action="DeleteEmployee" asp-controller="Employee" asp-route-id="@item.EmployeeID">Delete</a></td>
-            <td>@item.Title</td>
-            <td>@item.TitleOfCourtesy</td>
-            <td>@item.ReportsTo</td>
-            <td>@item.BirthDate</td>
-            <td>@item.HireDate</td>
-            <td>@item.Address</td>
-            <td>@item.Phone</td>
-            <td>@item.Notes</td>
+            <tr>
+                <td>@item.Name <br /><a asp-action="EditEmployee" asp-controller="Employee" asp-route-id="@item.EmployeeID">Edit</a> | <a asp-action="DeleteEmployee" asp-controller="Employee" asp-route-id="@item.EmployeeID">Delete</a></td>
+                <td>@item.Title</td>
+                <td>@item.TitleOfCourtesy</td>
+                <td>@item.ReportsTo</td>
+                <td>@item.BirthDate</td>
+                <td>@item.HireDate</td>
+                <td>@item.Address</td>
+                <td>@item.Phone</td>
+                <td>@item.Notes</td>
 
-        </tr>
+            </tr>
         }
     </tbody>
 </table>

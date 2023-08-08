@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NorthWind.COMMON.ViewModels.AddVM;
+using NorthWind.COMMON.ViewModels.EntityVM;
+using NorthWind.COMMON.ViewModels.GetVM;
 
 namespace NorthWind.DAL.Interfaces
 {

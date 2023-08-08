@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.EntityVM;
 using NorthWind.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -27,13 +27,17 @@ namespace NorthWind.UI.Controllers
         [HttpPost]
         public IActionResult NewCategory(CategoryVM categoryVM)
         {
+            TempData["SuccessMessageCategoryAdd"] = null;
+            TempData["ErrorMessageCategoryAdd"] = null;
             if (_catDal.AddCategory(categoryVM))
             {
+                TempData["SuccessMessageCategoryAdd"] = "Category added successfully!";
                 return RedirectToAction("Index");
             }
             else
             {
-                return View("NewCategory");                
+                TempData["ErrorMessageCategoryAdd"] = "Error adding category.";
+                return View("NewCategory");
             }
         }
     }

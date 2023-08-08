@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NorthWind.COMMON.ViewModels
+namespace NorthWind.COMMON.ViewModels.EntityVM
 {
     public class OrderDetailVM
     {

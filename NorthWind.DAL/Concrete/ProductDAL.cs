@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.AddVM;
+using NorthWind.COMMON.ViewModels.EntityVM;
+using NorthWind.COMMON.ViewModels.GetVM;
 using NorthWind.CORE.Context;
 using NorthWind.CORE.Entity;
 using NorthWind.DAL.Interfaces;
@@ -33,8 +36,7 @@ namespace NorthWind.DAL.Concrete
                 UnitsInStock = productVM.UnitsInStock,
                 UnitsOnOrder = productVM.UnitsOnOrder,
                 ReorderLevel = productVM.ReorderLevel,
-                Discontinued = productVM.Discontinued,                
-                AktifMi = true
+                Discontinued = productVM.Discontinued
             };
             try
             {
@@ -61,7 +63,6 @@ namespace NorthWind.DAL.Concrete
         public IEnumerable<ProductVM> GetProducts()
         {
             return (from p in _db.Products
-                   where p.AktifMi==true
                    select new ProductVM {
                    ProductID=p.ProductID,
                    ProductName=p.ProductName,
@@ -79,7 +80,6 @@ namespace NorthWind.DAL.Concrete
         public List<GetProductVM> ProductTable()
         {
             var productTable = (from p in _db.Products
-                                where p.AktifMi == true
                                 join c in _db.Categories on p.CategoryID equals c.CategoryID
                                 join s in _db.Suppliers on p.SupplierID equals s.SupplierID
                                 select new GetProductVM

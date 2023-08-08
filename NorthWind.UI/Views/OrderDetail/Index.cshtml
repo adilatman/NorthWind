@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<GetOrderDetailVM>
 <h1>Order Details</h1>
+@if (TempData["SuccessMessageOrderDetailAdd"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessageOrderDetailAdd"]</div>
+}
 <br />
 <a asp-action="NewOrderDetail" asp-controller="OrderDetail" class="btn btn-danger">Add Order Detail</a>
 <br />
@@ -16,13 +20,13 @@
     <tbody>
         @foreach (var item in Model.OrderBy(c => c.OrderID))
         {
-        <tr>
-            <td>@item.OrderID <br /><a asp-action="EditOrderDetail" asp-controller="OrderDetail" asp-route-id="@item.OrderID">Edit</a> | <a asp-action="DeleteOrderDetail" asp-controller="OrderDetail" asp-route-id="@item.OrderID">Delete</a></td>
-            <td>@item.Product</td>
-            <td>@item.UnitPrice</td>
-            <td>@item.Quantity</td>
-            <td>@item.Discount</td>
-        </tr>
+            <tr>
+                <td>@item.OrderID <br /><a asp-action="EditOrderDetail" asp-controller="OrderDetail" asp-route-id="@item.OrderID">Edit</a> | <a asp-action="DeleteOrderDetail" asp-controller="OrderDetail" asp-route-id="@item.OrderID">Delete</a></td>
+                <td>@item.Product</td>
+                <td>@item.UnitPrice</td>
+                <td>@item.Quantity</td>
+                <td>@item.Discount</td>
+            </tr>
         }
     </tbody>
 </table>

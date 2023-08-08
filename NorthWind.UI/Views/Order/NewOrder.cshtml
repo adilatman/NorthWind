@@ -1,6 +1,10 @@
 ﻿@model AddOrderVM
 
 <h2>Add New Order</h2>
+@if (TempData["ErrorMessageOrderAdd"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessageOrderAdd"]</div>
+}
 <br />
 <form asp-controller="Order" asp-action="NewOrder" method="post">
     <div class="mb-3">
@@ -9,12 +13,12 @@
         </select>
     </div>
     <div class="mb-3">
-        <label class="form-label">Employee: </label> <select class="custom-select"  asp-for="EmployeeID" asp-items="@(new SelectList(Model.employeeVMs,"EmployeeID","LastName"))">
+        <label class="form-label">Employee: </label> <select class="custom-select" asp-for="EmployeeID" asp-items="@(new SelectList(Model.employeeVMs,"EmployeeID","LastName"))">
             <option>Seciniz</option>
         </select>
     </div>
     <div class="mb-3">
-        <label class="form-label">Shipper: </label> <select class="custom-select"  asp-for="ShipVia" asp-items="@(new SelectList(Model.shipperVMs,"ShipperID","CompanyName"))">
+        <label class="form-label">Shipper: </label> <select class="custom-select" asp-for="ShipVia" asp-items="@(new SelectList(Model.shipperVMs,"ShipperID","CompanyName"))">
             <option>Seciniz</option>
         </select>
     </div>
@@ -28,27 +32,27 @@
         <label class="form-label">Shipped Date: </label> <input type="date" asp-for="ShippedDate" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Freight: </label> <input class="form-control"  type="text" asp-for="Freight" />
+        <label class="form-label">Freight: </label> <input class="form-control" type="text" asp-for="Freight" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Ship Name: </label> <input class="form-control"  type="text" asp-for="ShipName" />
+        <label class="form-label">Ship Name: </label> <input class="form-control" type="text" asp-for="ShipName" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Ship Address: </label> <input class="form-control"  type="text" asp-for="ShipAddress" />
+        <label class="form-label">Ship Address: </label> <input class="form-control" type="text" asp-for="ShipAddress" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Ship City: </label> <input class="form-control"  type="text" asp-for="ShipCity" />
+        <label class="form-label">Ship City: </label> <input class="form-control" type="text" asp-for="ShipCity" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Ship Region: </label> <input class="form-control"  type="text" asp-for="ShipRegion" />
+        <label class="form-label">Ship Region: </label> <input class="form-control" type="text" asp-for="ShipRegion" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Ship Postal Code: </label> <input class="form-control"  type="text" asp-for="ShipPostalCode" />
+        <label class="form-label">Ship Postal Code: </label> <input class="form-control" type="text" asp-for="ShipPostalCode" />
     </div>
     <div class="mb-3">
-        <label class="form-label">Ship Country: </label> <input class="form-control"  type="text" asp-for="ShipCountry" />
+        <label class="form-label">Ship Country: </label> <input class="form-control" type="text" asp-for="ShipCountry" />
     </div>
     <div class="mb-3">
         <input type="submit" name="name" value="Add" class="btn btn-danger" />
-    </div>    
+    </div>
 </form>

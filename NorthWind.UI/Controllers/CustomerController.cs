@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.EntityVM;
 using NorthWind.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -27,12 +28,16 @@ namespace NorthWind.UI.Controllers
         [HttpPost]
         public IActionResult NewCustomer(CustomerVM customerVM)
         {
+            TempData["SuccessMessageCustomerAdd"] = null;
+            TempData["ErrorMessageCustomerAdd"] = null;
             if (_cusDal.AddCustomer(customerVM))
             {
+                TempData["SuccessMessageCustomerAdd"] = "Customer added successfully!";
                 return RedirectToAction("Index");
             }
             else
             {
+                TempData["ErrorMessageCustomerAdd"] = "Error adding customer.";
                 return View("NewCustomer");
             }
         }

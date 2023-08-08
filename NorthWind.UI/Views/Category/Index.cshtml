@@ -1,5 +1,10 @@
 ﻿@model IEnumerable<CategoryVM>
 <h1>Categories</h1>
+@if (TempData["SuccessMessageCategoryAdd"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessageCategoryAdd"]</div>
+}
+
 <br />
 <a asp-action="NewCategory" asp-controller="Category" class="btn btn-danger">Add Category</a>
 <br />
@@ -15,7 +20,7 @@
         {
             <tr>
                 <td>@item.CategoryName <br /><a asp-action="EditCategory" asp-controller="Category" asp-route-id="@item.CategoryID">Edit</a> | <a asp-action="DeleteCategory" asp-controller="Category" asp-route-id="@item.CategoryID">Delete</a></td>
-                <td>@item.Description</td>                
+                <td>@item.Description</td>
             </tr>
         }
     </tbody>

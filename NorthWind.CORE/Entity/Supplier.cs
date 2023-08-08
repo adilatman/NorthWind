@@ -20,7 +20,6 @@ namespace NorthWind.CORE.Entity
         public string Phone { get; set; }
         public string Fax { get; set; }
         public string HomePage { get; set; }
-        public bool AktifMi { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
     }

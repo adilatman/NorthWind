@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NorthWind.COMMON.ViewModels
+namespace NorthWind.COMMON.ViewModels.EntityVM
 {
     public class OrderVM
     {
@@ -22,6 +22,5 @@ namespace NorthWind.COMMON.ViewModels
         public string ShipRegion { get; set; }
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
-        public bool AktifMi { get; set; }
     }
 }

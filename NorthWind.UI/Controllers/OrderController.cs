@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.AddVM;
 using NorthWind.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -41,12 +42,16 @@ namespace NorthWind.UI.Controllers
         [HttpPost]
         public IActionResult NewOrder(AddOrderVM addOrderVM)
         {
+            TempData["SuccessMessageOrderAdd"] = null;
+            TempData["ErrorMessageOrderAdd"] = null;
             if (_ordDal.AddOrder(addOrderVM))
-            {
+            {                
+                TempData["SuccessMessageOrderAdd"] = "Order added successfully!";
                 return RedirectToAction("Index");
             }
             else
             {
+                TempData["ErrorMessageOrderAdd"] = "Error adding order.";
                 return View("NewOrder");
             }
         }

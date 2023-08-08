@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.EntityVM;
+using NorthWind.COMMON.ViewModels.GetVM;
 using NorthWind.CORE.Context;
 using NorthWind.CORE.Entity;
 using NorthWind.DAL.Interfaces;
@@ -31,7 +33,6 @@ namespace NorthWind.DAL.Concrete
         public IEnumerable<CustomerVM> GetCustomers()
         {
             return (from s in _db.Customers
-                    where s.AktifMi == true
                     select new CustomerVM
                     {
                         CustomerID = s.CustomerID,
@@ -50,7 +51,6 @@ namespace NorthWind.DAL.Concrete
         public List<GetCustomerVM> CustomerList()
         {
             var customers = (from c in _db.Customers
-                             where c.AktifMi == true
                              select new GetCustomerVM
                              {
                                  CustomerID = c.CustomerID,
@@ -79,8 +79,7 @@ namespace NorthWind.DAL.Concrete
                 PostalCode = customerVM.PostalCode,
                 Country = customerVM.Country,
                 Phone = customerVM.Phone,
-                Fax = customerVM.Fax,
-                AktifMi = true
+                Fax = customerVM.Fax
             };
             try
             {
