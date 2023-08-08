@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<GetOrderVM>
 <h1>Orders</h1>
+@if (TempData["SuccessMessageOrderAdd"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessageOrderAdd"]</div>
+}
 <br />
 <a asp-action="NewOrder" asp-controller="Order" class="btn btn-danger">Add Order</a>
 <br />

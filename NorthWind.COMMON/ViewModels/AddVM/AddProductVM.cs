@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Linq;
 using System.Threading.Tasks;
+using NorthWind.COMMON.ViewModels.EntityVM;
 
-namespace NorthWind.COMMON.ViewModels
+namespace NorthWind.COMMON.ViewModels.AddVM
 {
     public class AddProductVM
     {
@@ -18,7 +19,6 @@ namespace NorthWind.COMMON.ViewModels
         public Nullable<short> UnitsOnOrder { get; set; }
         public Nullable<short> ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
-        public bool AktifMi { get; set; }
         public List<SelectListItem> DropDownCategories { get; set; }
         public List<SelectListItem> DropDownSuppliers { get; set; }
         public IEnumerable<CategoryVM> categoryVMs { get; set; }

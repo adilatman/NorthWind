@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.EntityVM;
 using NorthWind.CORE.Context;
 using NorthWind.CORE.Entity;
 using NorthWind.DAL.Interfaces;

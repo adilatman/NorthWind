@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.AddVM;
 using NorthWind.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -31,12 +32,16 @@ namespace NorthWind.UI.Controllers
         [HttpPost]
         public IActionResult NewEmployee(AddEmployeeVM addEmployeeVM)
         {
-            if(_empDal.AddEmployee(addEmployeeVM))
+            TempData["SuccessMessageOrderAdd"] = null;
+            TempData["ErrorMessageOrderAdd"] = null;
+            if (_empDal.AddEmployee(addEmployeeVM))
             {
+                TempData["SuccessMessageEmployeeAdd"] = "Employee added successfully!";
                 return RedirectToAction("Index");
             }
             else
             {
+                TempData["ErrorMessageEmployeeAdd"] = "Error adding employee.";
                 return View("NewEmployee");
             }
         }

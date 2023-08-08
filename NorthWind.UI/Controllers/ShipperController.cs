@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.EntityVM;
 using NorthWind.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -27,12 +28,16 @@ namespace NorthWind.UI.Controllers
         [HttpPost]
         public IActionResult NewShipper(ShipperVM ShipperVM)
         {
+            TempData["ErrorMessageShipperAdd"] = null;
+            TempData["ErrorMessageShipperAdd"] = null;
             if (_shiDal.AddShipper(ShipperVM))
             {
+                TempData["ErrorMessageShipperAdd"] = "Shipper added successfully!";
                 return RedirectToAction("Index");
             }
             else
             {
+                TempData["ErrorMessageShipperAdd"] = "Error adding shipper.";
                 return View("NewShipper");
             }
         }

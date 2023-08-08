@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NorthWind.COMMON.ViewModels
+namespace NorthWind.COMMON.ViewModels.EntityVM
 {
     public class ProductVM
     {
@@ -18,6 +18,5 @@ namespace NorthWind.COMMON.ViewModels
         public Nullable<short> UnitsOnOrder { get; set; }
         public Nullable<short> ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
-        public bool AktifMi { get; set; }
     }
 }

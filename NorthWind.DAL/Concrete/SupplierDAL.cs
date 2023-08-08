@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.AddVM;
+using NorthWind.COMMON.ViewModels.EntityVM;
+using NorthWind.COMMON.ViewModels.GetVM;
 using NorthWind.CORE.Context;
 using NorthWind.CORE.Entity;
 using NorthWind.DAL.Interfaces;
@@ -35,8 +38,7 @@ namespace NorthWind.DAL.Concrete
                 Country = supplierVM.Country,
                 Phone = supplierVM.Phone,
                 Fax = supplierVM.Fax,
-                HomePage=supplierVM.HomePage,
-                AktifMi = true
+                HomePage=supplierVM.HomePage
             };
             try
             {
@@ -61,7 +63,6 @@ namespace NorthWind.DAL.Concrete
         public IEnumerable<SupplierVM> GetSuppliers()
         {
             return (from s in _db.Suppliers
-                where s.AktifMi==true
                 select new SupplierVM { 
                 SupplierID=s.SupplierID,
                 CompanyName=s.CompanyName,
@@ -82,7 +83,6 @@ namespace NorthWind.DAL.Concrete
         public List<GetSupplierVM> SupplierList()
         {
             var suppliers = (from s in _db.Suppliers
-                             where s.AktifMi == true
                              select new GetSupplierVM
                              {
                                  SupplierID = s.SupplierID,

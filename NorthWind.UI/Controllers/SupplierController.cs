@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.EntityVM;
 using NorthWind.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -27,12 +28,16 @@ namespace NorthWind.UI.Controllers
         [HttpPost]
         public IActionResult NewSupplier(SupplierVM SupplierVM)
         {
+            TempData["SuccessMessageSupplierAdd"] = null;
+            TempData["ErrorMessageSupplierAdd"] = null;
             if (_supDal.AddSupplier(SupplierVM))
             {
+                TempData["SuccessMessageSupplierAdd"] = "Supplier added successfully!";
                 return RedirectToAction("Index");
             }
             else
             {
+                TempData["ErrorMessageSupplierAdd"] = "Error adding supplier.";
                 return View("NewSupplier");
             }
         }

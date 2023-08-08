@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.AddVM;
+using NorthWind.COMMON.ViewModels.EntityVM;
+using NorthWind.COMMON.ViewModels.GetVM;
 using NorthWind.CORE.Entity;
 using System;
 using System.Collections.Generic;

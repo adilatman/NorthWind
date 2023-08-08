@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using NorthWind.COMMON.ViewModels.EntityVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NorthWind.COMMON.ViewModels
+namespace NorthWind.COMMON.ViewModels.AddVM
 {
     public class AddEmployeeVM
     {
@@ -24,7 +25,6 @@ namespace NorthWind.COMMON.ViewModels
         public string Extension { get; set; }
         public string Notes { get; set; }
         public Nullable<int> ReportsTo { get; set; }
-        public bool AktifMi { get; set; }
         public List<SelectListItem> DropDownReportsTo { get; set; }
         public IEnumerable<EmployeeVM> employeeVMs { get; set;  }
     }

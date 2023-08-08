@@ -1,5 +1,10 @@
 ﻿@model IEnumerable<ShipperVM>
 <h1>Shippers</h1>
+@if (TempData["SuccessMessageShipperAdd"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessageShipperAdd"]</div>
+}
+
 <br />
 <a asp-action="NewShipper" asp-controller="Shipper" class="btn btn-danger">Add Shipper</a>
 <br />

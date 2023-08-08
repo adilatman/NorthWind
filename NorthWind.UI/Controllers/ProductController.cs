@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.AddVM;
 using NorthWind.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -37,12 +38,16 @@ namespace NorthWind.UI.Controllers
         [HttpPost]
         public IActionResult NewProduct(AddProductVM addProductVM)
         {
+            TempData["SuccessMessageProductAdd"] = null;
+            TempData["ErrorMessageProductAdd"] = null;
             if (_proDal.AddProduct(addProductVM))
             {
+                TempData["SuccessMessageProductAdd"] = "Product added successfully!";
                 return RedirectToAction("Index");
             }
             else
             {
+                TempData["ErrorMessageProductAdd"] = "Error adding product.";
                 return View("NewProduct");
             }
         }

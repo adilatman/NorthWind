@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using NorthWind.COMMON.ViewModels.EntityVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NorthWind.COMMON.ViewModels
+namespace NorthWind.COMMON.ViewModels.AddVM
 {
     public class AddOrderVM
     {
@@ -22,7 +23,6 @@ namespace NorthWind.COMMON.ViewModels
         public string ShipRegion { get; set; }
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
-        public bool AktifMi { get; set; }
         public List<SelectListItem> DropDownCustomers { get; set; }
         public List<SelectListItem> DropDownEmployees { get; set; }
         public List<SelectListItem> DropDownShippers { get; set; }

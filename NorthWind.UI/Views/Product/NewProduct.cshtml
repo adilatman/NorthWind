@@ -1,6 +1,10 @@
 ﻿@model AddProductVM
 
 <h2>Add New Product</h2>
+@if (TempData["ErrorMessageProductAdd"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessageProductAdd"]</div>
+}
 <br />
 <form asp-controller="Product" asp-action="NewProduct" method="post">
     <div class="mb-3">
@@ -13,12 +17,12 @@
             <option>Seciniz</option>
         </select>
     </div>
-    <div class="mb-3"><label class="form-label">Product Name: </label> <input class="form-control"  type="text" asp-for="ProductName" /></div>
-    <div class="mb-3"><label class="form-label">Quantity Per Unit: </label> <input class="form-control"  type="text" asp-for="QuantityPerUnit" /></div>
-    <div class="mb-3"><label class="form-label">Unit Price: </label> <input class="form-control"  type="text" asp-for="UnitPrice" /></div>
-    <div class="mb-3"><label class="form-label">Units In Stock: </label> <input class="form-control"  type="text" asp-for="UnitsInStock" /></div>
-    <div class="mb-3"><label class="form-label">Units On Order: </label> <input class="form-control"  type="text" asp-for="UnitsOnOrder" /></div>
-    <div class="mb-3"><label class="form-label">Reorder Level: </label> <input class="form-control"  type="text" asp-for="ReorderLevel" /></div>
+    <div class="mb-3"><label class="form-label">Product Name: </label> <input class="form-control" type="text" asp-for="ProductName" /></div>
+    <div class="mb-3"><label class="form-label">Quantity Per Unit: </label> <input class="form-control" type="text" asp-for="QuantityPerUnit" /></div>
+    <div class="mb-3"><label class="form-label">Unit Price: </label> <input class="form-control" type="text" asp-for="UnitPrice" /></div>
+    <div class="mb-3"><label class="form-label">Units In Stock: </label> <input class="form-control" type="text" asp-for="UnitsInStock" /></div>
+    <div class="mb-3"><label class="form-label">Units On Order: </label> <input class="form-control" type="text" asp-for="UnitsOnOrder" /></div>
+    <div class="mb-3"><label class="form-label">Reorder Level: </label> <input class="form-control" type="text" asp-for="ReorderLevel" /></div>
     <div class="mb-3"><label class="form-label">Discontinued: </label> <input type="checkbox" asp-for="Discontinued" /></div>
     <div class="mb-3"><input type="submit" name="name" value="Add" class="btn btn-danger" /></div>
 </form>

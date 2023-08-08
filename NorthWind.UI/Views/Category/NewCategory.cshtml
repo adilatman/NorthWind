@@ -1,9 +1,13 @@
 ﻿@model CategoryVM
 
 <h2>Add New Category</h2>
+@if (TempData["ErrorMessageCategoryAdd"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessageCategoryAdd"]</div>
+}
 <br />
 <form asp-controller="Category" asp-action="NewCategory" method="post">
-    <div class="mb-3"><label class="form-label">Category Name: </label> <input class="form-control"  type="text" asp-for="CategoryName" /></div>
-    <div class="mb-3"><label class="form-label">Description: </label> <input class="form-control"  type="text" asp-for="Description" /></div>
-    <div class="mb-3"><input type="submit" name="name" value="Add" class="btn btn-danger" /></div>    
+    <div class="mb-3"><label class="form-label">Category Name: </label> <input class="form-control" type="text" asp-for="CategoryName" /></div>
+    <div class="mb-3"><label class="form-label">Description: </label> <input class="form-control" type="text" asp-for="Description" /></div>
+    <div class="mb-3"><input type="submit" name="name" value="Add" class="btn btn-danger" /></div>
 </form>

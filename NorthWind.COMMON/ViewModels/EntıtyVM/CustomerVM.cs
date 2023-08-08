@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NorthWind.COMMON.ViewModels
+namespace NorthWind.COMMON.ViewModels.EntityVM
 {
-    public class SupplierVM
+    public class CustomerVM
     {
-        public int SupplierID { get; set; }
+        public string CustomerID { get; set; }
         public string CompanyName { get; set; }
         public string ContactName { get; set; }
         public string ContactTitle { get; set; }
@@ -19,7 +19,5 @@ namespace NorthWind.COMMON.ViewModels
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
-        public string HomePage { get; set; }
-        public bool AktifMi { get; set; }
     }
 }

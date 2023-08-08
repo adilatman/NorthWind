@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<GetSupplierVM>
 <h1>Suppliers</h1>
+@if (TempData["SuccessMessageSupplierAdd"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessageSupplierAdd"]</div>
+}
 <br />
 <a asp-action="NewSupplier" asp-controller="Supplier" class="btn btn-danger">Add Supplier</a>
 <br />

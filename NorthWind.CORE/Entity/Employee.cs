@@ -24,7 +24,6 @@ namespace NorthWind.CORE.Entity
         public string Extension { get; set; }
         public string Notes { get; set; }
         public Nullable<int> ReportsTo { get; set; }
-        public bool AktifMi { get; set; }
         //public virtual ICollection<Order> Orders { get; set; }
     }
 }

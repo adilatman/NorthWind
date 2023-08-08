@@ -1,6 +1,10 @@
 ﻿@model AddEmployeeVM
 
 <h2>Add New Employee</h2>
+@if (TempData["ErrorMessageEmployeeAdd"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessageEmployeeAdd"]</div>
+}
 <br />
 <form asp-controller="Employee" asp-action="NewEmployee" method="post">
     <div class="mb-3"><label>FirstName: </label> <input class="form-control" type="text" asp-for="FirstName" /></div>

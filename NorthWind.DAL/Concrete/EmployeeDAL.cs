@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.AddVM;
+using NorthWind.COMMON.ViewModels.EntityVM;
+using NorthWind.COMMON.ViewModels.GetVM;
 using NorthWind.CORE.Context;
 using NorthWind.CORE.Entity;
 using NorthWind.DAL.Interfaces;
@@ -31,7 +34,6 @@ namespace NorthWind.DAL.Concrete
         public IEnumerable<EmployeeVM> GetEmployees()
         {
             return (from e in _db.Employees
-                    where e.AktifMi == true
                     select new EmployeeVM {
                         EmployeeID = e.EmployeeID,
                         FirstName=e.FirstName,
@@ -55,7 +57,6 @@ namespace NorthWind.DAL.Concrete
         public List<GetEmployeeVM> EmployeeTable()
         {
             return (from e in _db.Employees
-                    where e.AktifMi == true
                     join emp in _db.Employees on e.ReportsTo equals emp.EmployeeID
                     select new GetEmployeeVM
                     {
@@ -92,8 +93,7 @@ namespace NorthWind.DAL.Concrete
                 Country = employeeVM.Country,
                 HomePhone = employeeVM.HomePhone,
                 Extension = employeeVM.Extension,
-                Notes = employeeVM.Notes,
-                AktifMi = true
+                Notes = employeeVM.Notes
             };
             try
             {

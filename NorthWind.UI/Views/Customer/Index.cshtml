@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<GetCustomerVM>
 <h1>Customers</h1>
+@if (TempData["SuccessMessageCustomerAdd"] != null)
+{
+    <div class="alert alert-success">@TempData["SuccessMessageCustomerAdd"]</div>
+}
 <br />
 <a asp-action="NewCustomer" asp-controller="Customer" class="btn btn-danger">Add Customer</a>
 <br />

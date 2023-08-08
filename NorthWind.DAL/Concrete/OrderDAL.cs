@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.AddVM;
+using NorthWind.COMMON.ViewModels.EntityVM;
+using NorthWind.COMMON.ViewModels.GetVM;
 using NorthWind.CORE.Context;
 using NorthWind.CORE.Entity;
 using NorthWind.DAL.Interfaces;
@@ -37,8 +40,7 @@ namespace NorthWind.DAL.Concrete
                 ShipCity = orderVM.ShipCity,
                 ShipRegion = orderVM.ShipRegion,
                 ShipPostalCode = orderVM.ShipPostalCode,
-                ShipCountry = orderVM.ShipCountry,
-                AktifMi = true
+                ShipCountry = orderVM.ShipCountry
             };
             try
             {
@@ -65,7 +67,6 @@ namespace NorthWind.DAL.Concrete
         public IEnumerable<OrderVM> GetOrders()
         {
             return (from o in _db.Orders
-                    where o.AktifMi == true
                     select new OrderVM
                     {
                         OrderID = o.OrderID,
@@ -88,7 +89,6 @@ namespace NorthWind.DAL.Concrete
         public List<GetOrderVM> OrderTable()
         {
             var orders = (from o in _db.Orders
-                          where o.AktifMi == true
                           join c in _db.Customers on o.CustomerID equals c.CustomerID
                           join e in _db.Employees on o.EmployeeID equals e.EmployeeID
                           join s in _db.Shippers on o.ShipVia equals s.ShipperID

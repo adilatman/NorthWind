@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using NorthWind.COMMON.ViewModels;
+using NorthWind.COMMON.ViewModels.EntityVM;
 using NorthWind.CORE.Context;
 using NorthWind.CORE.Entity;
 using NorthWind.DAL.Interfaces;
@@ -26,8 +27,7 @@ namespace NorthWind.DAL.Concrete
             {
                 ShipperID = shipperVM.ShipperID,
                 CompanyName = shipperVM.CompanyName,
-                Phone = shipperVM.Phone,
-                AktifMi = true
+                Phone = shipperVM.Phone
             };
             try
             {
@@ -53,7 +53,6 @@ namespace NorthWind.DAL.Concrete
         public IEnumerable<ShipperVM> GetShippers()
         {
             return (from s in _db.Shippers
-                   where s.AktifMi==true
                    select new ShipperVM { 
                    ShipperID=s.ShipperID,
                    CompanyName=s.CompanyName,

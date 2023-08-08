@@ -19,7 +19,6 @@ namespace NorthWind.CORE.Entity
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
-        public bool AktifMi { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
     }
