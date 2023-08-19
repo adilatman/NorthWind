@@ -19,6 +19,27 @@ namespace NorthWind.DAL.Concrete
         {
             _db = db;
         }
+        public bool EditCategory(CategoryVM categoryVM)
+        {
+            bool edited = false;
+            Category category = new Category()
+            {
+                CategoryID = categoryVM.CategoryID,
+                CategoryName = categoryVM.CategoryName,
+                Description = categoryVM.Description
+            };
+            try
+            {
+                _db.Categories.Update(category);
+                edited = _db.SaveChanges() > 0;
+            }
+            catch (Exception)
+            {
+
+                edited=false;
+            }
+            return edited;
+        }
 
         public bool AddCategory(CategoryVM categoryVM)
         {
@@ -48,7 +69,6 @@ namespace NorthWind.DAL.Concrete
                 Text = a.CategoryName
             }).ToList();
         }
-
         public IEnumerable<CategoryVM> GetCategories()
         {
             return (from c in _db.Categories

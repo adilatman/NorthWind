@@ -17,5 +17,6 @@ namespace NorthWind.DAL.Interfaces
         IEnumerable<CategoryVM> GetCategories();
         List<SelectListItem> DropDownCagetories();
         bool AddCategory(CategoryVM categoryVM);
+        bool EditCategory(CategoryVM categoryVM);
     }
 }
