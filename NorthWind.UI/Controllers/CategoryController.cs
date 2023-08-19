@@ -40,5 +40,26 @@ namespace NorthWind.UI.Controllers
                 return View("NewCategory");
             }
         }
+        //todo edit islemlerini tamamla
+        public IActionResult EditCategory(int id)
+        {
+            return View(id);
+        }
+        [HttpPost]
+        public IActionResult EditCategory(CategoryVM categoryVM)
+        {
+            TempData["SuccessMessageCategoryEdit"] = null;
+            TempData["ErrorMessageCategoryEdit"] = null;
+            if (_catDal.EditCategory(categoryVM))
+            {
+                TempData["SuccessMessageCategoryEdit"] = "Category edited successfully!";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                TempData["ErrorMessageCategoryEdit"] = "Error editing category.";
+                return View("EditCategory/{id}");
+            }
+        }
     }
 }

@@ -1,0 +1,13 @@
+﻿@model NorthWind.COMMON.ViewModels.EntityVM.CategoryVM
+
+<h2>EditCategory</h2>
+@if (TempData["ErrorMessageCategoryEdit"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessageCategoryEdit"]</div>
+}
+<br />
+<form asp-controller="Category" asp-action="EditCategory" method="post">
+    <div class="mb-3"><label class="form-label">Category Name: </label> <input class="form-control" type="text" asp-for="CategoryName" value="@Model.CategoryName"/></div>
+    <div class="mb-3"><label class="form-label">Description: </label> <input class="form-control" type="text" asp-for="Description" value="@Model.Description"/></div>
+    <div class="mb-3"><input type="submit" name="name" value="Add" class="btn btn-danger" /></div>
+</form>
