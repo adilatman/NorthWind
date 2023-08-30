@@ -48,6 +48,17 @@ namespace NorthWind.DAL.Concrete
                         Fax = s.Fax
                     }).ToList();
         }
+        public List<object> GetForExport()
+        {
+            return (from s in _db.Customers
+                    select new []
+                    {
+                        s.CustomerID,
+                        s.ContactName,
+                        s.City,
+                        s.Country
+                    }).ToList<object>();
+        }
         public List<GetCustomerVM> CustomerList()
         {
             var customers = (from c in _db.Customers

@@ -18,5 +18,6 @@ namespace NorthWind.DAL.Interfaces
         List<SelectListItem> DropDownCustomers();
         List<GetCustomerVM> CustomerList();
         bool AddCustomer(CustomerVM customerVM);
+        List<object> GetForExport();
     }
 }
